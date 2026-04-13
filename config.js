@@ -1,7 +1,7 @@
 const config = {
-    gesamtzeit: 10,
-    einatmen: 4,
-    halten1: 4,
-    ausatmen: 6,
-    halten2: 2
+    gesamtzeit: 5,
+    einatmen: 8,
+    halten1: 5,
+    ausatmen: 10,
+    halten2: 5
 };

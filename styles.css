@@ -31,55 +31,13 @@ label {
     font-size: 14px;
 }
 
-input[type="number"] {
-    width: 150px;
-    height: 40px;
-    border: 1px solid black;
+.number-input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 0 10px;
-    font-size: 16px;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-}
-
-input[type="number"]::-webkit-inner-spin-button, 
-input[type="number"]::-webkit-outer-spin-button {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-}
-
-.custom-number-input {
-    position: relative;
-}
-.custom-number-input input {
-    padding-right: 30px;
-}
-.custom-number-input .arrows {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-.custom-number-input .arrow {
-    width: 10px;
-    height: 10px;
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
-    cursor: pointer;
-}
-.custom-number-input .arrow.up {
-    transform: rotate(135deg);
-}
-.custom-number-input .arrow.down {
-    transform: rotate(-45deg);
+    background-color: white;
+    width: 120px;
 }
 
 .play-button {
