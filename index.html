@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atem-Timer-Schnittstelle</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="input-row">
+        <div class="input-group">
+            <label for="gesamtzeit">Gesamtzeit (Min):</label>
+            <div class="custom-number-input">
+                <input type="number" id="gesamtzeit" min="0">
+                <div class="arrows">
+                    <div class="arrow up"></div>
+                    <div class="arrow down"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="einatmen">Einatmen (Sek):</label>
+            <div class="custom-number-input">
+                <input type="number" id="einatmen" min="0">
+                <div class="arrows">
+                    <div class="arrow up"></div>
+                    <div class="arrow down"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="halten1">Halten (Sek):</label>
+            <div class="custom-number-input">
+                <input type="number" id="halten1" min="0">
+                <div class="arrows">
+                    <div class="arrow up"></div>
+                    <div class="arrow down"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="ausatmen">Ausatmen (Sek):</label>
+            <div class="custom-number-input">
+                <input type="number" id="ausatmen" min="0">
+                <div class="arrows">
+                    <div class="arrow up"></div>
+                    <div class="arrow down"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="halten2">Halten (Sek):</label>
+            <div class="custom-number-input">
+                <input type="number" id="halten2" min="0">
+                <div class="arrows">
+                    <div class="arrow up"></div>
+                    <div class="arrow down"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="play-button" aria-label="Starten">
+        <svg viewBox="0 0 100 100">
+            <polyline points="20,10 80,50 20,90" />
+        </svg>
+    </button>
+</div>
+
+</body>
+</html>
