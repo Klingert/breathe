@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atem-Timer-Schnittstelle</title>
+    <title>breathe</title>
     <link rel="stylesheet" href="styles.css">
     <script src="config.js" defer></script>
     <script src="script.js" defer></script>
@@ -11,7 +11,29 @@
 <body>
 
 <div class="container">
-    <div class="input-row">
+    <div id="timer-display">
+        <svg id="circle-progress" viewBox="0 0 100 100">
+            <circle class="circle-bg" cx="50" cy="50" r="45" />
+            <circle id="circle-einatmen" class="circle-segment" cx="50" cy="50" r="45" data-phase="einatmen" />
+            <circle id="circle-halten1" class="circle-segment" cx="50" cy="50" r="45" data-phase="halten1" />
+            <circle id="circle-ausatmen" class="circle-segment" cx="50" cy="50" r="45" data-phase="ausatmen" />
+            <circle id="circle-halten2" class="circle-segment" cx="50" cy="50" r="45" data-phase="halten2" />
+            <text id="label-einatmen" class="circle-label" text-anchor="middle">Einatmen</text>
+            <text id="label-halten1" class="circle-label" text-anchor="middle">Halten</text>
+            <text id="label-ausatmen" class="circle-label" text-anchor="middle">Ausatmen</text>
+            <text id="label-halten2" class="circle-label" text-anchor="middle">Halten</text>
+            <circle id="circle-indicator" cx="50" cy="5" r="3" fill="black" />
+        </svg>
+        <div class="timer-footer">
+            <span id="elapsed-time">00:00</span>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <span id="total-time">00:00</span>
+        </div>
+    </div>
+
+    <div class="input-row" id="input-section">
         <div class="input-group">
             <label for="einatmen">Einatmen (Sek):</label>
             <input type="number" id="einatmen" class="number-input" min="0">
@@ -33,12 +55,12 @@
         </div>
     </div>
 
-    <div class="input-group">
+    <div class="input-group" id="gesamtzeit-group">
         <label for="gesamtzeit">Gesamtzeit (Min):</label>
-        <input type="number" id="gesamtzeit" class="number-input" min="0">
+        <input type="number" id="gesamtzeit" class="number-input" min="0" step="0.1">
     </div>
 
-    <button class="play-button" aria-label="Starten">
+    <button class="play-button" id="play-button" aria-label="Starten">
         <svg viewBox="0 0 100 100">
             <polyline points="20,10 80,50 20,90" />
         </svg>

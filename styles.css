@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    position: relative;
 }
 
 .container {
@@ -13,6 +14,107 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 50px;
+}
+
+#timer-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#timer-display.active {
+    opacity: 1;
+}
+
+.timer-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px;
+    font-family: monospace;
+    width: 100%;
+}
+
+.timer-footer span:first-child {
+    min-width: 60px;
+    text-align: right;
+}
+
+.timer-footer span:last-child {
+    min-width: 60px;
+}
+
+#circle-progress {
+    width: 200px;
+    height: 200px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e0e0e0;
+    stroke-width: 4;
+}
+
+.circle-segment {
+    fill: none;
+    stroke-width: 4;
+    stroke-linecap: butt;
+    opacity: 0.3;
+}
+
+#circle-einatmen {
+    stroke: #4CAF50;
+}
+
+#circle-halten1 {
+    stroke: #2196F3;
+}
+
+#circle-ausatmen {
+    stroke: #FF9800;
+}
+
+#circle-halten2 {
+    stroke: #2196F3;
+}
+
+.circle-segment.active {
+    opacity: 1;
+}
+
+.circle-label {
+    font-size: 6px;
+    fill: #666;
+    font-family: Arial, sans-serif;
+}
+
+#circle-indicator {
+    transition: transform 0.2s linear;
+}
+
+#progress-container {
+    flex: 1;
+    height: 4px;
+    background-color: #e0e0e0;
+    position: relative;
+    min-width: 50px;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0%;
+    transition: width 0.2s linear;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
 }
 
 .input-row {
@@ -63,3 +165,5 @@ label {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+
