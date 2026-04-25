@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('progress-bar');
 
     const phases = ['einatmen', 'halten1', 'ausatmen', 'halten2'];
-    const circumference = 2 * Math.PI * 45;
+    const circumference = 2 * Math.PI * 35;
 
     inputs.forEach(id => {
         const saved = localStorage.getItem(id);
@@ -49,25 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const phaseLength = (durations[phase] / total) * circumference;
             segment.style.strokeDasharray = `${phaseLength} ${circumference}`;
             segment.style.strokeDashoffset = -cumulativeOffset;
-            segment.style.opacity = '0.3';
-            cumulativeOffset += phaseLength;
             phaseAngles.push((durations[phase] / total) * 360);
+            cumulativeOffset += phaseLength;
         });
 
-        const labels = ['Einatmen', 'Halten', 'Ausatmen', 'Halten'];
-        let currentAngle = -90;
-        phases.forEach((phase, i) => {
-            const label = document.getElementById(`label-${phase}`);
-            const midAngle = currentAngle + phaseAngles[i] / 2;
-            const rad = (midAngle * Math.PI) / 180;
-            const labelRadius = 65;
-            const x = 50 + labelRadius * Math.cos(rad);
-            const y = 50 + labelRadius * Math.sin(rad);
-            label.setAttribute('x', x);
-            label.setAttribute('y', y);
-            label.setAttribute('transform', `rotate(${midAngle + 90}, ${x}, ${y})`);
-            currentAngle += phaseAngles[i];
-        });
+        document.getElementById('label-einatmen').setAttribute('x', 100);
+        document.getElementById('label-einatmen').setAttribute('y', 20);
+        document.getElementById('label-halten1').setAttribute('x', 100);
+        document.getElementById('label-halten1').setAttribute('y', 90);
+        document.getElementById('label-ausatmen').setAttribute('x', 15);
+        document.getElementById('label-ausatmen').setAttribute('y', 90);
+        document.getElementById('label-halten2').setAttribute('x', 15);
+        document.getElementById('label-halten2').setAttribute('y', 20);
 
         circleIndicator.style.transform = 'rotate(-90deg)';
         circleIndicator.style.transformOrigin = '50px 50px';
